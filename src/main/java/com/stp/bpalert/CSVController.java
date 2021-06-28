@@ -53,16 +53,16 @@ public class CSVController {
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message,""));
   }
 
-  @GetMapping("/tutorials")
-  public ResponseEntity<List<BPAlertModel>> getAllTutorials() {
+  @GetMapping("/bpalert")
+  public ResponseEntity<List<BPAlertModel>> getAllBPAlertModels() {
     try {
-      List<BPAlertModel> tutorials = fileService.getAllTutorials();
+      List<BPAlertModel> bpAlertModel = fileService.getAllBPAlertModels();
 
-      if (tutorials.isEmpty()) {
+      if (bpAlertModel.isEmpty()) {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
       }
 
-      return new ResponseEntity<>(tutorials, HttpStatus.OK);
+      return new ResponseEntity<>(bpAlertModel, HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }

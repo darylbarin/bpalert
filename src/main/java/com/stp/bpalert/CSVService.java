@@ -30,7 +30,7 @@ public class CSVService {
     return in;
   }
 
-  public List<BPAlertModel> getAllTutorials() {
+  public List<BPAlertModel> getAllBPAlertModels() {
     return repository.findAll();
   }
 }
