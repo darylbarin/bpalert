@@ -1,9 +1,9 @@
 package com.stp.bpalert;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
 public class EmailConfig {
 	
 	@Value("${spring.mail.host}")
